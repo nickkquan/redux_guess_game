@@ -14,8 +14,10 @@ class Game extends Component {
 				<p>Random Number: {this.props.ranNum}</p>
 				<input onChange={this.props.userInput} value={this.props.userGuess} type="number" />
 				<p>{this.props.msg}</p>
+				<p>Number of Guesses: {this.props.guesses}</p>
 				<br />
 				<button onClick={this.props.makeGuess}>Make Guess</button>
+
 				{/* <button onClick={this.props.getRandomNumber}>Get Random Number</button> */}
 			</div>
 		);
@@ -26,7 +28,8 @@ function mapStateToProps(state) {
 	return {
 		ranNum: state.game.randomNumber,
 		userGuess: state.game.userGuess,
-		msg: state.game.message
+		msg: state.game.message,
+		guesses: state.game.numberOfGuesses
 	};
 }
 
